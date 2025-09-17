@@ -113,8 +113,54 @@ img {
   padding: 0 var(--spacing-sm);
 }
 
+/* Responsive Design Enhancements */
+@media (min-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
 @media (min-width: 768px) {
   .container {
     padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --shadow-light: 0 2px 9px rgba(0, 0, 0, 0.3);
+    --shadow-dark: 0 2px 9px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .header {
+    position: static !important;
+  }
+
+  .theme-toggle {
+    display: none !important;
   }
 }
