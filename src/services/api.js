@@ -1,5 +1,5 @@
 const BASE_URL = 'https://restcountries.com/v3.1';
-const FALLBACK_DATA_URL = '/rest-countries-api-with-color-theme-switcher-master/data.json';
+const FALLBACK_DATA_URL = '/rest-countries-app/data.json';
 
 // Transform old format to new format for compatibility
 const transformCountryData = (oldCountry) => {

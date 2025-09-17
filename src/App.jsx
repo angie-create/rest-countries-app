@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <ThemeProvider>
-      <Router basename="/rest-countries-api-with-color-theme-switcher-master">
+      <Router basename="/rest-countries-app">
         <div className="app">
           <Header />
           <main className="main-content">
