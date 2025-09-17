@@ -1,0 +1,213 @@
+.country-detail-page {
+  min-height: calc(100vh - 120px);
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-weight: var(--font-weight-light);
+  margin-bottom: var(--spacing-xl);
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--bg-color);
+  transform: translateY(-1px);
+}
+
+.back-arrow {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.country-detail-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.country-flag-large {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.country-flag-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.country-information {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.country-title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.country-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.details-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.detail-item {
+  font-size: var(--font-size-detail);
+  line-height: 1.6;
+}
+
+.detail-label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-color);
+}
+
+.detail-value {
+  font-weight: var(--font-weight-light);
+  color: var(--text-color);
+  margin-left: var(--spacing-xs);
+}
+
+.border-countries-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.border-label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+.border-countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.border-country-button {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-light);
+  transition: all 0.3s ease;
+}
+
+.border-country-button:hover {
+  background-color: var(--bg-color);
+  transform: translateY(-1px);
+}
+
+.border-loading {
+  color: var(--input-color);
+  font-style: italic;
+}
+
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  gap: var(--spacing-md);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--bg-color);
+  border-top: 3px solid var(--text-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.error-container button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s ease;
+}
+
+.error-container button:hover {
+  background-color: var(--bg-color);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .country-detail-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .country-title {
+    font-size: 1.5rem;
+  }
+
+  .country-details-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .border-countries-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .back-button {
+    padding: var(--spacing-xs) var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .country-flag-large {
+    aspect-ratio: 4/3;
+  }
+
+  .country-title {
+    font-size: 1.25rem;
+  }
+
+  .detail-item {
+    font-size: 0.875rem;
+  }
+}
