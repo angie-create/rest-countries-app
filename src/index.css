@@ -1,11 +1,42 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+:root {
+  /* Light Theme Colors */
+  --bg-light: hsl(0, 0%, 99%);
+  --element-light: hsl(0, 100%, 100%);
+  --text-light: hsl(200, 15%, 8%);
+  --input-light: hsl(0, 0%, 50%);
+
+  /* Dark Theme Colors */
+  --bg-dark: hsl(207, 26%, 17%);
+  --element-dark: hsl(209, 23%, 22%);
+  --text-dark: hsl(0, 100%, 100%);
+
+  /* Typography */
+  --font-family: 'Nunito Sans', sans-serif;
+  --font-size-home: 14px;
+  --font-size-detail: 16px;
+  --font-weight-light: 300;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 800;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Border Radius */
+  --border-radius: 5px;
+
+  /* Shadows */
+  --shadow-light: 0 2px 9px rgba(0, 0, 0, 0.05);
+  --shadow-dark: 0 2px 9px rgba(0, 0, 0, 0.2);
+
+  /* Breakpoints */
+  --mobile: 375px;
+  --desktop: 1440px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +44,77 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+[data-theme="light"] {
+  --bg-color: var(--bg-light);
+  --element-color: var(--element-light);
+  --text-color: var(--text-light);
+  --input-color: var(--input-light);
+  --shadow: var(--shadow-light);
 }
-a:hover {
-  color: #535bf2;
+
+[data-theme="dark"] {
+  --bg-color: var(--bg-dark);
+  --element-color: var(--element-dark);
+  --text-color: var(--text-dark);
+  --input-color: var(--text-dark);
+  --shadow: var(--shadow-dark);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-home);
+  font-weight: var(--font-weight-light);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+input {
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
   }
 }
